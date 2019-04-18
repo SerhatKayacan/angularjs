@@ -1,0 +1,70 @@
+<div>
+  <input type="text" class="form-control" placeholder="form arayın" ng-model="search.formname" />
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="form in forms | filter: search track by $index ">
+      <p>form ismi: {{ form.formname }}</p>
+      <button type="button" class="btn btn-primary" ng-click="formgoster(form)">formu aç</button>
+    </li>
+  </ul>
+  <button
+    type="button"
+    class="btn btn-primary"
+    data-toggle="modal"
+    data-target="#exampleModal"
+    data-whatever="@mdo"
+  >
+    yeni form ekleyin
+  </button>
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Yeni form</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+          <form  name="contactForm" ng-submit="addForm()" novalidate>
+            <input type="text" name="name" ng-required="true" placeholder="form ismi" ng-model="newform.formname" />
+              <div ng-show="contactForm.name.$touched && contactForm.name.$invalid">
+                <small style="color:red;display:block;text-align:center;">enter a valid form name</small>
+              </div>
+            <input type="text" name="isim" ng-required="true" placeholder="isim" ng-model="newform.isim" />
+            <div ng-show="contactForm.isim.$touched && contactForm.isim.$invalid">
+              <small style="color:red;display:block;text-align:center;">enter a valid name</small>
+            </div>
+            <input type="text" name="soyisim" ng-required="true" placeholder="soyisim" ng-model="newform.soyisim" />
+            <div ng-show="contactForm.soyisim.$touched && contactForm.soyisim.$invalid">
+              <small style="color:red;display:block;text-align:center;">enter a valid surname</small>
+            </div>
+            <input type="number" name="yas" ng-required="true" placeholder="yaş" ng-model="newform.yas" />
+            <div ng-show="contactForm.yas.$touched && contactForm.yas.$invalid">
+              <small style="color:red;display:block;text-align:center;">enter a valid number</small>
+            </div>
+            <input type="submit" value="Add new form" />
+            </form>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

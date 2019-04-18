@@ -1,0 +1,34 @@
+[
+  {
+    "formname": "form1",
+    "fields": [
+      {
+        "required": true,
+        "name": "Serhat"
+      },
+      {
+        "required": true,
+        "surname": "Kayacan"
+      },
+      {
+        "yas": 23
+      }
+    ]
+  },
+  {
+    "formname": "Serhat",
+    "fields": [
+      {
+        "required": true,
+        "name": "Serhat"
+      },
+      {
+        "required": true,
+        "surname": "Kayacan"
+      },
+      {
+        "yas": 23
+      }
+    ]
+  }
+]
